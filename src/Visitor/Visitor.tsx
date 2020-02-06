@@ -2,7 +2,8 @@ import React from 'react'
 
 interface IVisitorProps{
 
-}
+};
+
 const Visitor: React.FC<IVisitorProps> = (props: IVisitorProps) => {
 
     return(<h1>
