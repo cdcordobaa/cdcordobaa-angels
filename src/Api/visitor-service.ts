@@ -1,6 +1,6 @@
 
 
-const APIdataURL = '../Static/AGENTS_LIST.json'
+const APIdataURL = '../Static/AGENTS_LIST.json' //I have never fetched this way before
 
 const getAngelList = async() => {
 
