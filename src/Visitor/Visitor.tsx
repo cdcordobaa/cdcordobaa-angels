@@ -19,7 +19,7 @@ const Visitor: React.FC<IVisitorProps> = (props: IVisitorProps) => {
   
   const callForData = async () => {
     const list = await getAngelList();
-    console.log("api list", list);
+    console.log("api list, in hook", list);
     setAngelList(list);
   };
 
