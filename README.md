@@ -1,11 +1,9 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 
-![UI interface 1](./images/int-1.png)
-Format: ![Demo 1](url)
+![UI interface 1](int-1.png)
 
-![UI interface 2](./images/int-2.png)
-Format: ![Demo 2](url)
+![UI interface 2](int-2.png)
 
 
 ## Available Scripts
