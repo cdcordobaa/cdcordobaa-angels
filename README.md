@@ -1,10 +1,10 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 
-![UI interface 1](/images/int-1)
+![UI interface 1](./images/int-1.png)
 Format: ![Demo 1](url)
 
-![UI interface 2](/images/int-2)
+![UI interface 2](./images/int-2.png)
 Format: ![Demo 2](url)
 
 
