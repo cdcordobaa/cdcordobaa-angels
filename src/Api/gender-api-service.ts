@@ -13,11 +13,15 @@ const getAngelsGender = async(names: Array<string>) => {
     url.search = new URLSearchParams(params).toString();
     console.log("api params", params, url.toString());
 
-    //let data = await fetch(url.toString());
-    let data = JSON.parse(savedResponse);
+    //! Switch this two blocks 
+    let data = await fetch(url.toString());
     let response = await data.json();
+
+    //! Switch this two blocks
+    // let response = JSON.parse(savedResponse);
+    
     console.log("response for genders, in gender service", response);
-    return response;
+    return response.names;
 }
 
 export {

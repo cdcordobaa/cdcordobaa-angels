@@ -5,8 +5,15 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    background-color: paleturquoise;
     padding: .8rem 1rem ;
     border-radius: 10%;
     margin: 1rem;
+}
+
+.Favatar {
+    background-color: palevioletred;
+}
+
+.Mavatar{
+    background-color: paleturquoise;
 }

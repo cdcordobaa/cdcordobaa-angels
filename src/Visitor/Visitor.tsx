@@ -28,9 +28,11 @@ const Visitor: React.FC<IVisitorProps> = (props: IVisitorProps) => {
     console.log("genders", genderByName);
 
     list.forEach((element:any , index: number) => {
-        element.gender = genderByName[index];
+        element.gender = genderByName[index]?  genderByName[index].gender : undefined;
     });
-    
+
+    console.log("list with gender", list);
+
     setAngelList(list);
   };
 
