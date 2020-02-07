@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {getAngelList} from '../Api/visitor-service';
+import AngelCard from '../Components/AngelCard/AngelCard'
 
 interface IVisitorProps{
 
@@ -56,21 +57,29 @@ const Visitor: React.FC<IVisitorProps> = (props: IVisitorProps) => {
             Match
         </button>
 
+        <AngelCard
+           name="yikes"
+           id={1}
+           avatar=""
+           income={111}
+        >
+
+        </AngelCard>
+
         <div>
             {filteredAngels.length > 0 && 
                 filteredAngels.map((item: any) => {
                     return(
-                        <h1 key={item.id}>{item.name}</h1>
+                        <AngelCard
+                            key={item.id}
+                            {...item}
+                        >
+
+                        </AngelCard>
                     )
                 })
             }
         </div>
-
-       {/* {angeList.map((item: any, index) => {
-           return(
-               <h1>{item.name}</h1>
-           )
-       })} */}
        </div>
     )
 }
