@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getAngelList } from "../Api/visitor-service";
+import { getAngelsGender } from "../Api/gender-api-service";
 import AngelCard from "../Components/AngelCard/AngelCard";
 import "./Styles.css";
 
@@ -8,7 +9,6 @@ interface IVisitorProps {}
 const Visitor: React.FC<IVisitorProps> = (props: IVisitorProps) => {
   const treshold = 10000;
   const maxDisplayInList = 3;
-  
 
   const [angeList, setAngelList] = useState([]);
   const [filteredAngels, setfilteredAngels] = useState([]);
@@ -16,10 +16,21 @@ const Visitor: React.FC<IVisitorProps> = (props: IVisitorProps) => {
   const [warning, setWarning] = useState("");
   const [showMoreTimesClicked, setShowMoreTimesClicked] = useState(1);
   const [matched, setMatched] = useState(false);
-  
+
   const callForData = async () => {
     const list = await getAngelList();
     console.log("api list, in hook", list);
+    let names = list.map((angel:any) =>{
+        return angel.name;
+    })
+    let genderByName = await getAngelsGender(names);
+
+    console.log("genders", genderByName);
+
+    list.forEach((element:any , index: number) => {
+        element.gender = genderByName[index];
+    });
+    
     setAngelList(list);
   };
 
@@ -119,13 +130,12 @@ const Visitor: React.FC<IVisitorProps> = (props: IVisitorProps) => {
   return (
     <div>
       {matchSection()}
-      {
-    matched &&
+      {matched &&
       incomeValue !== "" &&
       incomeValue !== "0" &&
-      filteredAngels.length  < 1 ? 
+      filteredAngels.length < 1 ? (
         <p>Please try a different income value</p>
-       : (
+      ) : (
         cardSection()
       )}
     </div>
