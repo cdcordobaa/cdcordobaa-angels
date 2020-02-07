@@ -1,0 +1,17 @@
+.match-section{
+    min-height: 7rem;
+    background-color: gainsboro;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom: hotpink 3px;
+}
+
+.card-row-flex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: space-around;
+}

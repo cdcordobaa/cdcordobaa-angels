@@ -1,5 +1,6 @@
 
 .card-container{
+    display: flex;
     max-width: 10rem;
     flex-direction: column;
     justify-content: space-around;
@@ -7,4 +8,5 @@
     background-color: paleturquoise;
     padding: .8rem 1rem ;
     border-radius: 10%;
+    margin: 1rem;
 }
